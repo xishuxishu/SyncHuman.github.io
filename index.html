@@ -23,7 +23,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
-  <title>SyncHuman: Synchronizing 2D and 3D Diffusion Models for Single-view Human Reconstruction</title>
+  <title>SyncHuman: Synchronizing 2D and 3D Generative Models for Single-view Human Reconstruction</title>
   <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
   rel="stylesheet">
@@ -52,7 +52,7 @@
         <div class="columns is-centered">
           <div class="column has-text-centered">
             <h1 class="title is-1 publication-title">
-              SyncHuman: Synchronizing 2D and 3D Diffusion Models for Single-view Human Reconstruction
+              SyncHuman: Synchronizing 2D and 3D Generative Models for Single-view Human Reconstruction
             </h1>
             <div class="is-size-5 publication-authors" style="text-align: center; margin: 10px 0;">
                   NeurIPS 2025
@@ -153,7 +153,7 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            Photorealistic 3D full-body human reconstruction from a single image is a critical yet challenging task for applications in films and video games due to inherent ambiguities and severe self-occlusions. While recent approaches leverage SMPL estimation and SMPL-conditioned image diffusion models to hallucinate novel views, they suffer from inaccurate 3D priors estimated from SMPL meshes and have difficulty in handling difficult human poses and reconstructing fine details.In this paper, we propose SyncHuman, a novel framework that combines 2D multiview diffusion and 3D native diffusion for the first time, enabling high-quality clothed human mesh reconstruction from single-view images even under challenging human poses.Multiview diffusion excels at capturing fine 2D details but struggles with structural consistency, whereas 3D native diffusion generates coarse yet structurally consistent 3D shapes. By integrating the complementary strengths of these two approaches, we develop a more effective generation framework. Specifically, we first jointly fine-tune the multiview diffusion model and the 3D native diffusion model with proposed pixel-aligned 2D-3D synchronization attention to produce geometrically aligned 3D shapes and 2D multiview images. To further improve details, we introduce a feature injection mechanism that lifts fine details from 2D multiview images onto the aligned 3D shapes, enabling accurate and high-fidelity reconstruction.Extensive experiments demonstrate that SyncHuman achieves robust and photorealistic 3D human reconstruction, even for images with challenging poses. Our method outperforms baseline methods in geometric accuracy and visual fidelity, demonstrating a promising direction for future 3D generation models.
+            Photorealistic 3D full-body human reconstruction from a single image is a critical yet challenging task for applications in films and video games due to inherent ambiguities and severe self-occlusions. While recent approaches leverage SMPL estimation and SMPL-conditioned image generative models to hallucinate novel views, they suffer from inaccurate 3D priors estimated from SMPL meshes and have difficulty in handling difficult human poses and reconstructing fine details.In this paper, we propose SyncHuman, a novel framework that combines 2D multiview generative model and 3D native generative model for the first time, enabling high-quality clothed human mesh reconstruction from single-view images even under challenging human poses.Multiview generative model excels at capturing fine 2D details but struggles with structural consistency, whereas 3D native generative model generates coarse yet structurally consistent 3D shapes. By integrating the complementary strengths of these two approaches, we develop a more effective generation framework. Specifically, we first jointly fine-tune the multiview generative model and the 3D native generative model with proposed pixel-aligned 2D-3D synchronization attention to produce geometrically aligned 3D shapes and 2D multiview images. To further improve details, we introduce a feature injection mechanism that lifts fine details from 2D multiview images onto the aligned 3D shapes, enabling accurate and high-fidelity reconstruction.Extensive experiments demonstrate that SyncHuman achieves robust and photorealistic 3D human reconstruction, even for images with challenging poses. Our method outperforms baseline methods in geometric accuracy and visual fidelity, demonstrating a promising direction for future 3D generation models.
           </p>
         </div>
       </div>
@@ -176,7 +176,7 @@
           </p>
          <img src="static/assets/att.png" alt="SyncHuman Demo" style="max-width: 100%; height: auto; border-radius: 8px; display: inline-block;">
                <p>
-            <strong>2D-3D synchronization attention.</strong> <strong>2D to 3D attention: </strong>each 3D voxel feature is orthogonally projected onto front, back, left, and right view planes to retrieve corresponding 2D features, and refines the voxel feature with cross-attention. <strong>3D to 2D attention: </strong>each 2D multiview feature is projected into 3D space to attend to a column of voxel features, enhancing the 2D features.This mutual refinement ensures that 2D diffusion and 3D diffusion align with each other in a shared 3D space.Given a single human image, SyncHuman first generates multiview color and normal maps, along with an aligned sparse voxel grid, which is further transformed into a set of structured latents. Then, we propose to inject the high-quality images into the 3D latents via a Multiview Guided Decoder and output the detailed high-fidelity textured human mesh.
+            <strong>2D-3D synchronization attention.</strong> <strong>2D to 3D attention: </strong>each 3D voxel feature is orthogonally projected onto front, back, left, and right view planes to retrieve corresponding 2D features, and refines the voxel feature with cross-attention. <strong>3D to 2D attention: </strong>each 2D multiview feature is projected into 3D space to attend to a column of voxel features, enhancing the 2D features.This mutual refinement ensures that 2D generative model and 3D generative model align with each other in a shared 3D space.Given a single human image, SyncHuman first generates multiview color and normal maps, along with an aligned sparse voxel grid, which is further transformed into a set of structured latents. Then, we propose to inject the high-quality images into the 3D latents via a Multiview Guided Decoder and output the detailed high-fidelity textured human mesh.
           </p>
       </h2>
     </div>
